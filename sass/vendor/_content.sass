@@ -1,0 +1,193 @@
+.logo
+  position: absolute
+  z-index: 1
+  color: #fff
+  width: 100%
+  height: 100%
+  &>span
+    position: absolute
+    left: calc( 50vw -  25px)
+    top: calc( 50vh -  8px)
+    letter-spacing: 1.3px
+    transition: 1s ease
+    opacity: 0
+  &--start>span
+    top: calc( 40vh -  8px)
+    opacity: 1
+  &--not-start>span
+    top: calc( 5vh -  8px)
+    opacity: 1
+
+.preloader
+  position: absolute
+  z-index: 1
+  width: 100%
+  height: 100%
+  display: flex
+  align-items: center
+  justify-content: center
+  &>span
+    height: 0rem
+    width: 1px
+    background-color: #fff
+    animation-name: preloader1
+    animation-duration: 2s
+    animation-fill-mode: forwards
+    animation-delay: 1s
+     
+@keyframes preloader1
+  0%
+    height: 1rem
+  30%
+    height: 5rem
+  100%
+    height: 8rem
+    opacity: 0
+  
+.section_0
+  display: flex
+  align-items: center
+  justify-content: center
+  opacity: 0
+  &>h1
+    max-width: 300px
+    letter-spacing: 1px
+    font-size: 22px
+    line-height: 30px
+    text-align: center
+    transition: 1s
+    margin-top: 10rem
+  &--start
+    opacity: 1
+
+.section
+  position: absolute
+  z-index: 2
+  width: 100%
+  height: 100%
+  color: #fff
+  transition: 1s
+  transform-origin: top
+  &--hide
+    z-index: 0
+    opacity: 0
+    transform: rotate3d(1, 0, 0, -10deg)
+  &__container
+    width: 100%
+    height: 100%
+    padding-left: 50%
+    display: flex
+    flex-direction: column
+    justify-content: center
+  &__prev-title
+    font-size: 11px
+    letter-spacing: 2px
+    color: #808080
+    margin-bottom: 20px
+    line-height: 15px
+  &__title
+    max-width: 240px
+    font-size: 20px
+    margin-bottom: 20px
+  &__discription
+    max-width: 240px
+    margin-bottom: 24px
+    font-size: 18px
+    line-height: 1.5
+  &__button
+    max-width: 140px
+    border: 1px solid rgba(255, 255, 255, 0.15)
+    padding: 10px 15px
+    text-align: center
+    border-radius: 8px
+    transition: 0.5s
+    cursor: pointer
+    &:hover
+      border: 1px solid rgba(255, 255, 255, 1)
+    &:active
+      border: 1px solid rgba(255, 255, 255, 0.5)
+  
+.footer
+  width: 100%
+  height: 100%
+  font-size: 20px
+  &__container
+    width: 100%
+    height: 100%
+    display: flex
+    align-items: center
+    justify-content: center
+  &__contact
+    padding: 40px
+    &>div
+      margin-bottom: 20px
+    &>a
+      color: #fff
+      text-decoration: none
+      border-bottom: 1px solid #fff
+      transition: 0.4s
+      &:hover
+        border-bottom: 3px solid #fff
+  &__line
+    height: 200px
+    width: 1px
+    background-color: #ffffff33
+    transition: 0.7s
+    transform: scale(1, 0.1)
+    transform-origin: top
+    &--active
+      transform: scale(1, 1)
+  &__portfolio
+    padding: 40px
+    &>div
+      margin-bottom: 20px
+  &__button
+    display: block
+    margin: auto
+    max-width: 200px
+    border: 1px solid rgba(255, 255, 255, 0.15)
+    padding: 10px 15px
+    text-align: center
+    border-radius: 8px
+    transition-delay: 2s
+    -o-transition-duration: 1s
+    color: #fff
+    text-decoration: none
+    cursor: pointer
+    &:hover
+      border: 1px solid rgba(255, 255, 255, 1)
+    &:active
+      border: 1px solid rgba(255, 255, 255, 0.5)
+
+
+@keyframes section0
+  0%
+    opacity: 0
+    margin-top: 10rem
+  100
+    opacity: 1
+    margin-top: 6rem
+
+@media screen and ( max-width: 900px )
+  .section
+    &__container
+      align-items: end
+      padding-left: 0
+      padding: 0 2rem
+    &__discription
+      text-align: right
+@media screen and ( max-width: 800px )
+  .footer
+    &__container
+      flex-direction: column
+    &__line
+      transform-origin: center
+      width: 70%
+      height: 1px
+      transform: scale(0.1, 1)
+      &--active
+        transform: scale(1, 1)
+    &__contact
+      padding: 20px
+    &__portfolio
+      padding: 20px
